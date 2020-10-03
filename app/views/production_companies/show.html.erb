@@ -1,2 +1,13 @@
-<h2 class="titile is-2"><%=@production_company.name%></h2>
-<p>Find me in app/views/production_companies/show.html.erb</p>
+<h2 class="title is-2"><%=@production_company.name%></h2>
+
+<p class="mb-5">This company made <%= @production_company.movies.count%> movies of the top 100 movies</p>
+
+<h3 class="title is-3">Movies Made By <%= @production_company.name %> </h3>
+
+<div class="content">
+<ul>
+  <% @production_company.movies.each do |m| %>
+  <li><%= link_to m.title, m%></li>
+  <%end%>
+</ul>
+</div>
